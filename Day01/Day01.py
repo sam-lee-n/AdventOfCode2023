@@ -23,7 +23,5 @@ for line in lines:
             for key, value in num_dict.items():
                 if re.match(f"^{key}", line[i:]):
                     new_line += str(value)
-    num = re.sub('\D', '', line)
     total += int(new_line[0]+new_line[-1])
-#   print(line, int(num[0]+num[-1]), total)
 print('Part 2:', total)
