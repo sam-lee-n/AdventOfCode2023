@@ -20,14 +20,10 @@ for line in lines:
 
 for key in maps.keys():
     for i in range(len(seeds)):
-        remapped = False
         for converter in maps[key]:
             if converter[1] <= seeds[i] < converter[1] + converter[2] + 1:
                 seeds[i] += converter[0] - converter[1]
-                remapped = True
                 break
-        if not remapped:
-            seeds[i]
 
 print("Part 1:", min(seeds))
 
