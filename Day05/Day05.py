@@ -29,7 +29,6 @@ print("Part 1:", min(seeds))
 
 # Part 2
 seeds_pair = []
-loc_pair = []
 seeds = [int(x) for x in re.findall(r"\d+", lines[0])]
 for i in range(0, len(seeds), 2):
     seeds_pair.append([seeds[i], seeds[i + 1] + seeds[i]])
