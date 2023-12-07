@@ -9,7 +9,6 @@ card_order = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
 card_order_j = ["J", "2", "3", "4", "5", "6", "7", "8", "9", "T", "Q", "K", "A"]
 hand_order = [[1, 1, 1, 1, 1], [2, 1, 1, 1], [2, 2, 1], [3, 1, 1], [3, 2], [4, 1], [5]]
 ordered_hands = [[] for i in range(len(hand_order))]
-order_hands = []
 
 
 def is_smaller_than(a, b, joker=False):
