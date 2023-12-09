@@ -1,7 +1,7 @@
 import re
 
 
-def get_next_number(input, direction=1):
+def get_next_number(input):
     diff = [j - i for i, j in zip(input[:-1], input[1:])]
     if all(x == 0 for x in diff):
         return input[-1]
