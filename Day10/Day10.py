@@ -94,3 +94,25 @@ for i, row in enumerate(pipe_map):
 
 # print("\n".join(map(str, enclosed_map)))
 print("Part 2:", sum([x for line in enclosed_map for x in line]))
+
+
+symbolMap = {
+"F": "\u250F",
+"J": "\u251B",
+"L": "\u2517",
+"7": "\u2513",
+"|": "\u2503",
+"-": "\u2501",
+".": " "
+}
+
+for i in range(len(pipe_map)):
+    for j in range(len(pipe_map[0])):
+        if dis_map[i][j] > -1:
+            pipe_map[i][j] = symbolMap[pipe_map[i][j]]
+        else:
+            pipe_map[i][j] = " "
+        if enclosed_map[i][j] == 1:
+            pipe_map[i][j] = "I"
+
+print("\n".join(["".join(x) for x in pipe_map]))
