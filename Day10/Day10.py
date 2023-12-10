@@ -7,15 +7,12 @@ for line in lines:
     pipe_map.append(list(line.strip()))
 max_x = len(pipe_map[0])
 max_y = len(pipe_map)
-# print(pipe_map)
 
 dis_map = [[-1] * len(pipe_map[0]) for i in range(len(pipe_map))]
-# print("\n".join(map(str, dis_map)))
 
 path = []
 path.append([(i, x.index("S")) for i, x in enumerate(pipe_map) if "S" in x][0])
 dis_map[path[0][0]][path[0][1]] = 0
-# print(dis_map)
 
 step = 0
 s_con = {"|", "-", "J", "L", "7", "F"}
@@ -84,7 +81,6 @@ for i, row in enumerate(pipe_map):
     going_down = None
     for j, col in enumerate(row):
         if dis_map[i][j] > -1 and col == "|":
-            going_down = not going_down
             enclosed = not enclosed
         elif dis_map[i][j] > -1 and col in "LF":
             going_down = col == "F"
