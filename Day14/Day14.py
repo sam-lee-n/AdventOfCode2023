@@ -37,10 +37,12 @@ def p2(lines, cycles=1):
     c = 0
     while c < cycles:
         # add logic to spot have we seen this before...then we can skip ahead
-        seen_lines = "".join("".join(row) for row in lines)
+        seen_lines = "".join(lines)
         if seen_lines in pre_states:
             time_to_repeat = c - pre_states[seen_lines]
             c += (cycles - c) // time_to_repeat * time_to_repeat
+            if c >= cycles:
+                break
         else:
             pre_states[seen_lines] = c
 
